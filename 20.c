@@ -39,7 +39,6 @@ int create()
             scanf("%c",&junk);
             printf("note : press 'e' if all the nodes are already listed, press enter otherwise.\n");
             scanf("%c",&ch);
-        
     }
     if(ch=='e')
     {
