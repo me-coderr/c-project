@@ -1,16 +1,17 @@
-/*Write a program to remove duplicate nodes from a linked list.
+/*Write a program to find all pairs of integers in the linked list whose sum is equal to a given
+number.
 Example:
-LL: 3 4 2 3 6 3 4 5 2 2
-Output: 3 4 2 6 5*/
-
+Given number=7
+LL: 3 2 8 1 6 4 11
+This will return (3,4) and (6,1)*/
 
 #include<stdio.h>
 #include<stdlib.h>
 
 struct node
 {
-    int data;
     struct node *next;
+    int data;
 };
 
 struct node *head=NULL;
@@ -52,7 +53,7 @@ void display()
     printf("\n");
 }
 
-void removeDuplicates(int n)
+void sumpairs(int n)
 {
     struct node *moving, *temp;
     int c;
@@ -64,13 +65,12 @@ void removeDuplicates(int n)
         {
             temp=temp->next;
         }
-        moving=temp;
-        for(int j=i+1;j<=n;j++)
+        moving=temp->next;
+        for(int j=i+1;j<n;j++)
         {
-            if(temp->data==(moving->next)->data)
+            if((temp->data+moving->data)==n)
             {
-                moving->next=(moving->next)->next;
-                --n;
+                printf("(%d,%d)\t",temp->data,moving->data);
             }
             moving=moving->next;
         }
@@ -79,15 +79,16 @@ void removeDuplicates(int n)
 
 int main()
 {
-    int n;
+    int n, num;
     printf("\ncreate a list first:\n");
     printf("enter the number of nodes\n");
     scanf("%d",&n);
     create(n);
     printf("\nthe list you entered:\n");
     display();
-    removeDuplicates(n);
-    printf("\nthe list after removing all the duplicates:\n");
-    display();
+    printf("\nenter the number whose sum pairs are required:\n");
+    scanf("%d",&num);
+    printf("\nthe sumpairs are:\n");
+    sumpairs(num);
     return 0;
 }

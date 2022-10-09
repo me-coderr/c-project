@@ -1,3 +1,8 @@
+/*Write a program to delete the middle element(s) of a linked list by traversing the list only once. If
+the list contains odd number of elements, the n/2+1th element will be deleted. On the other hand, if it
+contains even number of elements, you need to delete both n/2th and n/2+1 th elements.*/
+
+
 #include<stdio.h>
 #include<stdlib.h>
 
