@@ -62,7 +62,6 @@ void reverse(int n)
         {
             temp=temp->next;
         }
-        printf("/n%d",temp->data);
         if(head_rev==NULL)
         {
             head_rev=temp;
@@ -74,7 +73,6 @@ void reverse(int n)
             temp_rev=temp_rev->next;
         }
     }
-    free(temp);
     temp_rev->next=head_rev;
     temp_rev=temp_rev->next;
 }

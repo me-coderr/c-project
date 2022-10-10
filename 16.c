@@ -73,7 +73,6 @@ void reverse(int n)
             temp_rev=temp_rev->next;
         }
     }
-    free(temp);
     temp_rev->next=NULL;
 }
 
