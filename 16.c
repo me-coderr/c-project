@@ -1,4 +1,4 @@
-/*Reverse the list of elements in a circular linked list.*/
+/*Reverse the list of elements in a singly linked list.*/
 
 
 #include<stdio.h>
@@ -28,13 +28,13 @@ void create(int n)
         }
         else
         {
-            while(temp->next!=head)
+            while(temp->next!=NULL)
             {
                 temp=temp->next;
             }
             temp->next=newnode;
         }
-        newnode->next=head;
+        newnode->next=NULL;
     }
     printf("\n");
 }
@@ -42,12 +42,12 @@ void create(int n)
 void display(struct node *headDisplay)
 {
     struct node *temp=headDisplay;
-    while(temp->next!=headDisplay)
+    while(temp->next!=NULL)
     {
         printf("%d\t",temp->data);
         temp=temp->next;
     }
-    printf("%d\t::\t%d",temp->data,(temp->next)->data);
+    printf("%d",temp->data);
     printf("\n");
 }
 
@@ -62,7 +62,6 @@ void reverse(int n)
         {
             temp=temp->next;
         }
-        printf("/n%d",temp->data);
         if(head_rev==NULL)
         {
             head_rev=temp;
@@ -75,21 +74,20 @@ void reverse(int n)
         }
     }
     free(temp);
-    temp_rev->next=head_rev;
-    temp_rev=temp_rev->next;
+    temp_rev->next=NULL;
 }
 
 int main()
 {
     int n;
-    printf("\ncreate a circular list first:\n");
+    printf("\ncreate a linked list first:\n");
     printf("enter the number of nodes\n");
     scanf("%d",&n);
     create(n);
-    printf("\nthe circular list you entered:\n");
+    printf("\nthe list you entered:\n");
     display(head);
     reverse(n);
-    printf("\nthe circular list after being reversed:\n");
+    printf("\nthe list after being reversed:\n");
     display(head_rev);
     return 0;
 }
