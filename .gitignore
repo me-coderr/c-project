@@ -2,4 +2,3 @@
 *.vscode
 test.c
 *.gitignore
-*12.c
