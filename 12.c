@@ -16,9 +16,7 @@ struct node
 
 struct node *headNew=NULL, *head1=NULL, *head2=NULL;
 
-int z=1;
-
-void create(int n, struct node *head)
+struct node* create(int n, struct node *head)
 {
     struct node *newnode, *temp;
     for(int i=1;i<=n;i++)
@@ -30,10 +28,6 @@ void create(int n, struct node *head)
         if(head==NULL)
         {
             head=newnode;
-            if(z==1){
-                head1=newnode; z++;}
-            else if(z==2)
-                head2=newnode;
         }
         else
         {
@@ -46,6 +40,7 @@ void create(int n, struct node *head)
         newnode->next=NULL;
     }
     printf("\n");
+    return head;
 }
 
 void display(struct node *head)
@@ -63,10 +58,10 @@ void display(struct node *head)
 void intersect(int n1, int n2)
 {
     struct node *temp1=head1, *temp2=head2, *temp=headNew, *newnode=NULL;
-    for(int i=1;i<n1;i++)
+    for(int i=1;i<=n1;i++)
     {
         temp2=head2;
-        for(int j=1;j<n2;j++)
+        for(int j=1;j<=n2;j++)
         {
             if(temp1->data==temp2->data)
             {
@@ -99,10 +94,10 @@ int main()
     int n1, n2;
     printf("\nenter the number of node in list 1:\n");
     scanf("%d",&n1);
-    create(n1, head1);
+    head1=create(n1, head1);
     printf("\ntime for list 2\n\nnumber of nodes in list 2\n");
     scanf("%d",&n2);
-    create(n2, head2);
+    head2=create(n2, head2);
     printf("\nthe lists you entered:\n1: ");
     display(head1);
     printf("2: ");
