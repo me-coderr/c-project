@@ -134,9 +134,9 @@ int main()
     printf("\nenter the number of nodes in list 2\n");
     scanf("%d",&n2);
     head2=create(head2, n2);
-    printf("\nthe lists you entered:\n1 : ");
+    printf("\nthe lists you entered:\n1 :\t");
     display(head1);
-    printf("\n2 : ");
+    printf("\n2 :\t");
     display(head2);
     removeDuplicates(head1, n1);
     removeDuplicates(head2, n2);
